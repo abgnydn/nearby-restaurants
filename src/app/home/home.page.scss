@@ -1,0 +1,82 @@
+ion-header {
+  padding: 0 16px;
+}
+
+.searchbar {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  align-items: center;
+  flex: 1;
+  width: 100%;
+  top: 81px;
+  z-index: 998;
+}
+
+.searchbar ion-icon {
+  position: fixed;
+  z-index: 999;
+  right: 30px;
+  top: 28;
+  width: 46px;
+  height: 46px;
+}
+
+ion-icon {
+  width: 40px;
+  height: 40px;
+  --background: transparent !important;
+}
+
+ion-toolbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+ion-title {
+  text-align: center;
+}
+
+ion-searchbar {
+  text-align: start;
+  padding: 0;
+  margin: 0 16px;
+  --border-radius: 9px;
+  --box-shadow: 0 10px 25px #0108241a;
+}
+
+ion-content ion-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  --ion-item-margin-top: 15px;
+  --ion-item-margin-bottom: 15px;
+}
+
+ion-content ion-list ion-item {
+  --border-width: 0px;
+  --border-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ion-content ion-list ion-list-header {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+ion-content ion-list .list-header {
+  margin-left: 28px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.results {
+  margin-top: 97px;
+}

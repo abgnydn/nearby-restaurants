@@ -1,0 +1,7 @@
+{
+  "name": "nearby-restaurants-test",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

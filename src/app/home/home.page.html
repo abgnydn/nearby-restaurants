@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar style="--font-family: var(--ion-font-family-secondary);">
+    <button id="notification-button" ion-button clear slot="start">
+      <ion-icon src="../../assets/icon/Menu button.svg"></ion-icon>
+    </button>
+    <ion-title>
+      Ana Sayfa
+    </ion-title>
+    <button id="notification-button" ion-button clear slot="end">
+      <ion-icon src="../../assets/icon/Group 36265.svg"></ion-icon>
+    </button>
+    <button id="notification-button" ion-button clear slot="end">
+      <ion-icon src="../../assets/icon/Group 36267.svg"></ion-icon>
+    </button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]=" true">
+  <ion-loading trigger="open-loading" message="Yükleniyor..." [isOpen]="isLoading"></ion-loading>
+  <div class="searchbar">
+    <ion-searchbar (ionInput)="onSearchInput($event)" type="text" placeholder="Mekan ara" color="dark"
+      searchIcon="../../assets/icon/search (17).svg"></ion-searchbar>
+    <ion-icon src="../../assets/icon/Filter button.svg" class="test"></ion-icon>
+  </div>
+  <div class="results">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12" *ngFor="let item of filteredData; let i=index">
+          <app-card [item]="item"></app-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-infinite-scroll threshold="100px" (ionInfinite)="loadMoreItems($event)">
+      <ion-infinite-scroll-content loadingText="Please wait..." loadingSpinner="bubbles"></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+
+  </div>
+</ion-content>

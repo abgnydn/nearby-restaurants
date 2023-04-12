@@ -1,0 +1,29 @@
+<ion-card class="card">
+  <div class="card__image">
+    <ion-badge>
+      <ion-icon src="../../../assets/icon/Group 1219.svg"></ion-icon>{{storeInfo.rate}}
+    </ion-badge>
+    <ion-img [src]="imageUrl" (error)="handleImageError($event)"></ion-img>
+  </div>
+
+  <ion-card-header class="card__header">
+    <ion-card-title class="card__title">{{title}}</ion-card-title>
+    <ion-card-subtitle class="card__subtitle">
+      <div class="card__subtitle__text">{{text}}</div>
+      <div class="card__subtitle__info">
+        <ion-icon src="../../assets/icon/shopping_basket-24px.svg"></ion-icon>
+        <span>Min.Sipariş Tutarı: {{storeInfo.minOrderPrice}} ₺</span>
+      </div>
+    </ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content class="card__content">
+    <span class="card__content__distance">{{ calculateDistance() }} yakınında</span>
+<div class="card__content__status">
+<span [ngStyle]="{'color': statusColor}">
+İşletme {{isOpen ? "Açık" : "Kapalı"}}
+</span>
+<span class="card__working-hours">{{storeInfo.workingHours[0].open}} / {{storeInfo.workingHours[0].close}}</span>
+</div>
+</ion-card-content>
+</ion-card>
