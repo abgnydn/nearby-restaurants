@@ -76,12 +76,24 @@ export class CardComponent {
 
   // Private method to calculate the status (open/closed) of the restaurant and set the status color
   private calculateStatus() {
-    let openingTime = new Date(
-      '1970-01-01T' + this.storeInfo.workingHours[0].open
-    );
-    let closingTime = new Date(
-      '1970-01-01T' + this.storeInfo.workingHours[0].close
-    );
+    let openingTime = new Date();
+    let closingTime = new Date();
+
+    // Parse the opening and closing times from the storeInfo object
+    const [openHour, openMinute] =
+      this.storeInfo.workingHours[0].open.split(':');
+    const [closeHour, closeMinute] =
+      this.storeInfo.workingHours[0].close.split(':');
+
+    // Set the hours and minutes for opening and closing times
+    openingTime.setHours(Number(openHour), Number(openMinute), 0, 0);
+    closingTime.setHours(Number(closeHour), Number(closeMinute), 0, 0);
+
+    // If closing time is before opening time, add one day to closing time
+    if (closingTime < openingTime) {
+      closingTime.setDate(closingTime.getDate() + 1);
+    }
+
     let currentTime = new Date();
     this.isOpen = currentTime >= openingTime && currentTime <= closingTime;
     this.statusColor = this.isOpen

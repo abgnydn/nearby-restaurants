@@ -110,6 +110,7 @@ export class HomePage implements OnInit {
     this.api
       .getData(this.skip, this.limit, latitude, longitude)
       .subscribe((data) => {
+        console.log(data.response, 'data');
         this.data = data.response;
         this.filterItems();
         this.isLoading = false;

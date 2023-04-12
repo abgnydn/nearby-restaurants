@@ -19,11 +19,11 @@
 
   <ion-card-content class="card__content">
     <span class="card__content__distance">{{ calculateDistance() }} yakınında</span>
-<div class="card__content__status">
-<span [ngStyle]="{'color': statusColor}">
-İşletme {{isOpen ? "Açık" : "Kapalı"}}
-</span>
-<span class="card__working-hours">{{storeInfo.workingHours[0].open}} / {{storeInfo.workingHours[0].close}}</span>
-</div>
-</ion-card-content>
+    <div class="card__content__status">
+      <span [ngStyle]="{'color': statusColor}">
+        İşletme {{isOpen ? "Açık" : "Kapalı"}}
+      </span>
+      <span class="card__working-hours">{{storeInfo.workingHours[0].open}} / {{storeInfo.workingHours[0].close}}</span>
+    </div>
+  </ion-card-content>
 </ion-card>
