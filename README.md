@@ -4,6 +4,8 @@ Nearby Restaurants is an Ionic Angular mobile application that allows users to s
 
 ![App Screenshot](./app-screenshot.png)
 
+You can visit the app's website: <https://nearby-restaurants-edf2f.web.app/home>
+
 ## Features
 
 - Fetches user's location using Capacitor Geolocation plugin
@@ -38,6 +40,13 @@ To get started with Nearby Restaurants, follow these steps:
 
    ```bash
    ionic serve
+   ```
+
+5. Run the application in your emulator:
+
+   ```bash
+      ionic capacitor open ios
+      ionic capacitor open android
    ```
 
 ## Building for Production
